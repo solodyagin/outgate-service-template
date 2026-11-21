@@ -6,7 +6,7 @@
 
 Репозиторий инициализирован документацией. Исходники сервиса, Go module, конфигурация, тесты и CI пока отсутствуют; собрать или запустить шаблон ещё нельзя.
 
-Интеграция с Outgate требует будущего пакета `outgateclient` и опубликованной версии [outgate-sdk](https://github.com/solodyagin/outgate-sdk). Сейчас SDK содержит только пакет `protocol/v1`.
+Интеграция с Outgate требует будущего пакета `outgateclient` и опубликованной версии [outgate-sdk](https://github.com/solodyagin/outgate-sdk). Сейчас SDK содержит wire codecs `protocol/v1` и чистую HTTP state machine `wssstate`; транспортов и готового подключения к gateway ещё нет.
 
 ## Планируемый состав
 
