@@ -6,7 +6,7 @@
 
 Репозиторий инициализирован документацией. Исходники сервиса, Go module, конфигурация, тесты и CI пока отсутствуют; собрать или запустить шаблон ещё нельзя.
 
-Готовая интеграция шаблона требует будущего пакета `client` и SDK release с фиксированной версией [outgate-sdk](https://github.com/solodyagin/outgate-sdk). SDK уже содержит wire codecs, модели lifecycle, HTTP signatures, QUIC bootstrap/control и потоковый HTTP/3, а также minor-1 quiescent fence primitives для drain. Прикладной Client/control driver, автоматический reconnect и WebSocket/Hijacker ещё не реализованы; самостоятельный готовый boilerplate пока отсутствует.
+Готовая интеграция шаблона требует будущего пакета `client` и SDK release с фиксированной версией [outgate-sdk](https://github.com/solodyagin/outgate-sdk). SDK уже содержит wire codecs, модели lifecycle, HTTP signatures, QUIC bootstrap/control и потоковый HTTP/3, а также service-side `quicsession` driver для readiness/status, minor-1 drain/unregister и actual cleanup. Прикладной Client/dial, автоматический reconnect и WebSocket/Hijacker ещё не реализованы; самостоятельный готовый boilerplate пока отсутствует.
 
 ## Планируемый состав
 
