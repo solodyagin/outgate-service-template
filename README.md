@@ -6,7 +6,7 @@
 
 Репозиторий инициализирован документацией. Исходники сервиса, Go module, конфигурация, тесты и CI пока отсутствуют; собрать или запустить шаблон ещё нельзя.
 
-Готовая интеграция шаблона требует встроенного credential/dial adapter, прикладных HTTP API пакета `client` и SDK release с фиксированной версией [outgate-sdk](https://github.com/solodyagin/outgate-sdk). SDK уже содержит wire codecs, модели lifecycle, HTTP signatures, QUIC bootstrap/control и потоковый HTTP/3, а также service-side `quicsession` driver для readiness/status, minor-1 drain/unregister и actual cleanup. Public `client.Client` уже предоставляет lifecycle, readiness wait, coalesced shutdown/security gate и sequential reconnect через explicit Connect callback. Встроенный credential/dial adapter, ServiceHTTPClient и WebSocket/Hijacker ещё не реализованы; самостоятельный готовый boilerplate пока отсутствует.
+Готовая интеграция шаблона требует файлового credential provider/renewal, прикладных HTTP API пакета `client` и SDK release с фиксированной версией [outgate-sdk](https://github.com/solodyagin/outgate-sdk). SDK уже содержит wire codecs, модели lifecycle, HTTP signatures, QUIC bootstrap/control и потоковый HTTP/3, а также service-side `quicsession` driver для readiness/status, minor-1 drain/unregister и actual cleanup. Public `client.Client` уже предоставляет lifecycle, readiness wait, coalesced shutdown/security gate и sequential reconnect через explicit Connect callback. Встроенный verified QUIC dialer и static/callback atomic credential source реализованы. File provider/proactive renewal, ServiceHTTPClient и WebSocket/Hijacker ещё не реализованы; самостоятельный готовый boilerplate пока отсутствует.
 
 ## Планируемый состав
 
